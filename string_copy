@@ -1,0 +1,19 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int string_copy(char *a, char *b) {
+    for(int i = 0; *(a + i - 1) != '\0'; i++) {
+        *(b + i) = *(a + i);
+    }
+    return 0;
+}
+int main()
+{
+    char a[] = "Hello";
+    int p = (sizeof(a)/sizeof(char) - 1);
+    char d[p];
+    char *b = a;
+    char *c = d;
+    string_copy(b, c);
+    printf("%s", d);
+}
